@@ -71,4 +71,24 @@ class AppUtils {
   static showWarning(msg) {
     showMsg("Warning!", msg, Colors.orange, Icons.warning);
   }
+
+  static  showModalMessage({color,message}) async {
+      SmartDialog.show(
+        tag: "AlertDialog",
+        alignment: Alignment.bottomCenter,
+        builder: (_) {
+          return Container(
+            width: double.infinity,
+            height: 70,
+            color: color,
+            alignment: Alignment.center,
+            child: Text('$message', style: TextStyle(color: Colors.white)),
+          );
+        },
+      );
+      await Future.delayed(Duration(milliseconds: 1000),() {
+        SmartDialog.dismiss(tag: 'AlertDialog');
+      },);
+    }
+
 }
