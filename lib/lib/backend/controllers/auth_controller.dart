@@ -1,3 +1,4 @@
+import 'package:flutter_smart_dialog/flutter_smart_dialog.dart';
 import 'package:get/get.dart';
 
 import 'package:parse_server_sdk_flutter/parse_server_sdk.dart';
@@ -27,22 +28,18 @@ class AuthController extends GetxController {
 
   //get the firestore user from the firestore collection
   Future<void> getParseUser() async {
-   try{
-          if ((await ParseUser.currentUser()) != null);
-   
-    {
-      parseUser.value = await ParseUser.currentUser();
-      parseUser.refresh();
+    try {
+      if ((await ParseUser.currentUser()) != null) {
+        parseUser.value = await ParseUser.currentUser();
+        parseUser.refresh();
+      }
+
+      //print(parseUser.value);
+      update();
+    } catch (e) {
+      print(e);
     }
-
-    //print(parseUser.value);
-    update();
   }
-  catch(e){
-    print(e);
-  }
-  }
-
 
   //Login user Code
   login(username, password) async {
@@ -75,7 +72,7 @@ class AuthController extends GetxController {
       ..set("town", town)
       ..set("hasAccount", true)
       ..set("photoUrl", "")
-      ..set("role", "client")
+      ..set("role", "user")
       ..set("accountStatus", 1);
 
     try {
@@ -117,11 +114,13 @@ class AuthController extends GetxController {
 
   //password reset email
   Future<bool> sendPasswordResetEmail(email) async {
+    AppUtils.showLoading();
     try {
       final ParseUser user = ParseUser(null, null, email);
       final ParseResponse parseResponse = await user.requestPasswordReset();
       if (parseResponse.success) {
         AppUtils.showSuccess('Password Reset Link sent to your email!');
+        SmartDialog.dismiss();
         return true;
       } else {
         AppUtils.showError(parseResponse.error?.message);
@@ -129,11 +128,13 @@ class AuthController extends GetxController {
     } catch (error) {
       AppUtils.showError(error.toString());
     }
+    SmartDialog.dismiss();
     return false;
   }
 
   // Sign out
   Future<bool> signOut() async {
+    AppUtils.showLoading();
     if (await ParseUser.currentUser() != null) {
       await (await ParseUser.currentUser()).logout();
       await getParseUser();
@@ -145,6 +146,7 @@ class AuthController extends GetxController {
     }
 
     //Get.offAll(() => const Login());
+    SmartDialog.dismiss();
     return true;
   }
 
@@ -156,5 +158,4 @@ class AuthController extends GetxController {
       }
     }
   }
-
 }
