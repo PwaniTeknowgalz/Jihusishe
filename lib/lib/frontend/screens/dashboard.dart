@@ -2,7 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:jihusishe/lib/frontend/screens/countieslist.dart';
 import 'package:jihusishe/lib/frontend/screens/policeofficers.dart';
-import 'package:jihusishe/lib/frontend/screens/resources%20(1).dart';
+import 'package:jihusishe/lib/frontend/screens/resources.dart';
+import 'package:jihusishe/lib/frontend/widgets/side_navigation.dart';
 import '../widgets/card_img.dart';
 
 
@@ -12,61 +13,82 @@ class DashBoard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      drawer: AppDrawerWidget().getDrawer("dashboard"),
       backgroundColor: Color.fromARGB(255, 220, 226, 255),
+      appBar: AppBar(
+        backgroundColor: Color.fromRGBO(22, 29, 64, 1),
+        title: ListTile(
+          title:  Text(
+            "Hello Sheryl!",
+            style: TextStyle(
+                color: Colors.white,
+                fontSize: 16,
+                fontWeight: FontWeight.bold),
+          ),
+          subtitle:Text(
+            "Dashboard",
+            style: TextStyle(
+              color: Colors.white60,
+              fontSize: 12,
+            ),
+          ),
+        ),
+      ),
       body: Container(
         height: Get.height,
         width: Get.width,
         child: Column(
           children: [
             //Header
-            Container(
-              height: 94,
-              width: Get.width,
-              decoration: BoxDecoration(
-                // borderRadius: BorderRadius.only(
-                //     bottomLeft: Radius.circular(30),
-                //     bottomRight: Radius.circular(30)),
-                color: Color.fromRGBO(22, 29, 64, 1),
-              ),
-              child: Row(
-                children: [
-                  SizedBox(width: 10),
-                  IconButton(
-                      onPressed: () {
-                       Get.to(() =>CountiesList());
-                      },
-                      icon: Icon(
-                        Icons.menu,
-                        color: Colors.white,
-                      )),
-                  SizedBox(width: Get.width * .25),
-                  Container(
-                    child: Column(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: [
-                        Text(
-                          "Hello Sheryl!",
-                          style: TextStyle(
-                              color: Colors.white,
-                              fontSize: 16,
-                              fontWeight: FontWeight.bold),
-                        ),
-                        SizedBox(height: 5),
-                        Text(
-                          "Dashboard",
-                          style: TextStyle(
-                            color: Colors.white60,
-                            fontSize: 12,
-                          ),
-                        ),
-                      ],
-                    ),
-                  ),
-                ],
-              ),
-            ),
+            // Container(
+            //   height: 94,
+            //   width: Get.width,
+            //   decoration: BoxDecoration(
+            //     // borderRadius: BorderRadius.only(
+            //     //     bottomLeft: Radius.circular(30),
+            //     //     bottomRight: Radius.circular(30)),
+            //     color: Color.fromRGBO(22, 29, 64, 1),
+            //   ),
+            //   child: Row(
+            //     children: [
+            //       SizedBox(width: 10),
+            //       IconButton(
+            //           onPressed: () {
+            //            Get.to(() =>CountiesList());
+            //           },
+            //           icon: Icon(
+            //             Icons.menu,
+            //             color: Colors.white,
+            //           )),
+            //       SizedBox(width: Get.width * .25),
+            //       Container(
+            //         child: Column(
+            //           mainAxisAlignment: MainAxisAlignment.center,
+            //           children: [
+            //             Text(
+            //               "Hello Sheryl!",
+            //               style: TextStyle(
+            //                   color: Colors.white,
+            //                   fontSize: 16,
+            //                   fontWeight: FontWeight.bold),
+            //             ),
+            //             SizedBox(height: 5),
+            //             Text(
+            //               "Dashboard",
+            //               style: TextStyle(
+            //                 color: Colors.white60,
+            //                 fontSize: 12,
+            //               ),
+            //             ),
+            //           ],
+            //         ),
+            //       ),
+            //     ],
+            //   ),
+            // ),
 
             CardImg(
+
               img: "images/report.jpg",
               title: "REPORT",
               subtitle: "Select your location to report incidences",

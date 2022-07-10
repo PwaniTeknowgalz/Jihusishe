@@ -6,6 +6,7 @@ import 'dart:ui';
 //import 'package:data4peace/utils/app_utils.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:jihusishe/lib/backend/controllers/auth_controller.dart';
 import 'package:jihusishe/lib/frontend/auth/login.dart';
 import 'package:jihusishe/lib/frontend/screens/dashboard.dart';
 import 'package:jihusishe/lib/frontend/widgets/curved_edges.dart';
@@ -83,7 +84,15 @@ class Welcome extends StatelessWidget {
                     CustomButton(
                         title: "Welcome",
                         onPressed: () {
-                          Get.to(() => DashBoard());
+
+                          if(AuthController.to.parseUser.value==null){
+
+                            Get.to(() => Login());
+                          }else{
+
+                            Get.to(() => DashBoard());
+                          }
+
                         }),
 
                     SizedBox(

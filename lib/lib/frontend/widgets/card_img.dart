@@ -19,14 +19,14 @@ class CardImg extends StatelessWidget {
       child: Stack(
         children: [
           Container(
-            height: Get.height * .5 - 47,
+            height: Get.height * .5 - 48,
             width: Get.width,
             decoration: BoxDecoration(
                 image:
                     DecorationImage(image: AssetImage(img), fit: BoxFit.cover)),
           ),
           Container(
-            height: Get.height * .5 - 47,
+            height: Get.height * .5 - 48,
             width: Get.width,
             decoration: BoxDecoration(color: Color.fromRGBO(0, 0, 0, .7)),
             child: Column(
