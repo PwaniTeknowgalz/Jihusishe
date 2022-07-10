@@ -2,6 +2,7 @@ import 'dart:io';
 
 import 'package:flutter/material.dart';
 import 'package:flutter_smart_dialog/flutter_smart_dialog.dart';
+import 'package:form_builder_validators/form_builder_validators.dart';
 import 'package:get/get.dart';
 import 'package:jihusishe/lib/frontend/screens/landing.dart';
 import 'package:parse_server_sdk_flutter/parse_server_sdk.dart';
@@ -13,7 +14,7 @@ Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
 
   var keyParseApplicationId = "L1cjXTUiY3HMes9N4BPs5jpNwuBA3bqke9UW8bcI";
-  var keyParseServerUrl = "https://parseapi.back4app";
+  var keyParseServerUrl = "https://parseapi.back4app.com";
   var keyParseClientKey = "QQmandtEKrIsXEOwP5MfqPHK9gepQKqvCzAe69Br";
 
   var store = await CoreStoreSembastImp.getInstance(password: "mobipeace");
@@ -45,6 +46,12 @@ class MyApp extends StatelessWidget {
       builder: (BuildContext context, Widget? child) {
         return FlutterSmartDialog(child: child);
       },
+      supportedLocales: const [
+        Locale('en'),
+      ],
+      localizationsDelegates: const [
+        FormBuilderLocalizations.delegate,
+      ],
     );
   }
 }
