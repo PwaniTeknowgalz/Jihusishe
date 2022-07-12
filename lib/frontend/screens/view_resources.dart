@@ -6,8 +6,8 @@ import 'package:flutter_form_builder/flutter_form_builder.dart';
 import 'package:flutter_smart_dialog/flutter_smart_dialog.dart';
 import 'package:form_builder_validators/form_builder_validators.dart';
 import 'package:get/get.dart';
-import 'package:jihusishe/lib/backend/controllers/main_controller.dart';
-import 'package:jihusishe/lib/utils/app_utils.dart';
+import 'package:jihusishe/backend/controllers/main_controller.dart';
+import 'package:jihusishe/utils/app_utils.dart';
 import 'package:parse_server_sdk_flutter/parse_server_sdk.dart';
 import 'package:share_plus/share_plus.dart';
 
@@ -88,7 +88,7 @@ class _ViewResourcesState extends State<ViewResources> {
                           textAlign: TextAlign.start,
                           style: const TextStyle(fontSize: 12),
                         )),
-                    const SizedBox(
+                     const SizedBox(
                       height: 10,
                     ),
                     Obx(() {

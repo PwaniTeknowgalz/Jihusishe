@@ -7,12 +7,12 @@ import 'package:flutter_smart_dialog/flutter_smart_dialog.dart';
 import 'package:form_builder_validators/form_builder_validators.dart';
 import 'package:get/get.dart';
 import 'package:image_picker/image_picker.dart';
-import 'package:jihusishe/lib/backend/controllers/main_controller.dart';
-import 'package:jihusishe/lib/frontend/screens/view_resources.dart';
-import 'package:jihusishe/lib/frontend/widgets/custom_button.dart';
-import 'package:jihusishe/lib/frontend/widgets/side_navigation.dart';
-import 'package:jihusishe/lib/utils/app_constants.dart';
-import 'package:jihusishe/lib/utils/app_utils.dart';
+import 'package:jihusishe/backend/controllers/main_controller.dart';
+import 'package:jihusishe/frontend/screens/view_resources.dart';
+import 'package:jihusishe/frontend/widgets/custom_button.dart';
+import 'package:jihusishe/frontend/widgets/side_navigation.dart';
+import 'package:jihusishe/utils/app_constants.dart';
+import 'package:jihusishe/utils/app_utils.dart';
 import 'package:parse_server_sdk_flutter/parse_server_sdk.dart';
 import 'package:path/path.dart';
 

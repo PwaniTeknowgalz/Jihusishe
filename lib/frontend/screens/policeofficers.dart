@@ -1,10 +1,10 @@
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:jihusishe/lib/backend/controllers/main_controller.dart';
-import 'package:jihusishe/lib/utils/app_constants.dart';
-import 'package:jihusishe/lib/utils/data.dart';
-import 'package:jihusishe/lib/frontend/widgets/audio_recorder.dart';
+import 'package:jihusishe/backend/controllers/main_controller.dart';
+import 'package:jihusishe/utils/app_constants.dart';
+import 'package:jihusishe/utils/data.dart';
+import 'package:jihusishe/frontend/widgets/audio_recorder.dart';
 import 'package:share_plus/share_plus.dart';
 import 'countieslist.dart';
 

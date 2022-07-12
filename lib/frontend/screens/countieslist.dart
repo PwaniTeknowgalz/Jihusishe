@@ -2,8 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/src/foundation/key.dart';
 import 'package:flutter/src/widgets/framework.dart';
 import 'package:get/get.dart';
-import 'package:jihusishe/lib/frontend/screens/policeofficers.dart';
-import 'package:jihusishe/lib/utils/app_constants.dart';
+import 'package:jihusishe/frontend/screens/policeofficers.dart';
 
 class CountiesList extends StatelessWidget {
   const CountiesList({Key? key}) : super(key: key);

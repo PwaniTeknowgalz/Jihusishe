@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:jihusishe/lib/frontend/screens/countieslist.dart';
-import 'package:jihusishe/lib/frontend/screens/policeofficers.dart';
-import 'package:jihusishe/lib/frontend/screens/resources.dart';
-import 'package:jihusishe/lib/frontend/widgets/side_navigation.dart';
+import 'package:jihusishe/frontend/screens/countieslist.dart';
+import 'package:jihusishe/frontend/screens/resources.dart';
+import 'package:jihusishe/frontend/widgets/side_navigation.dart';
+
+import '../../backend/controllers/auth_controller.dart';
 import '../widgets/card_img.dart';
 
 
@@ -14,18 +15,18 @@ class DashBoard extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       drawer: AppDrawerWidget().getDrawer("dashboard"),
-      backgroundColor: Color.fromARGB(255, 220, 226, 255),
+      backgroundColor: const Color.fromARGB(255, 220, 226, 255),
       appBar: AppBar(
-        backgroundColor: Color.fromRGBO(22, 29, 64, 1),
-        title: ListTile(
+        backgroundColor: const Color.fromRGBO(22, 29, 64, 1),
+        title:  ListTile(
           title:  Text(
-            "Hello Sheryl!",
-            style: TextStyle(
+            "Hello ${AuthController.to.parseUser.value?.get("name")}!",
+            style: const TextStyle(
                 color: Colors.white,
                 fontSize: 16,
                 fontWeight: FontWeight.bold),
           ),
-          subtitle:Text(
+          subtitle:const Text(
             "Dashboard",
             style: TextStyle(
               color: Colors.white60,
@@ -34,7 +35,7 @@ class DashBoard extends StatelessWidget {
           ),
         ),
       ),
-      body: Container(
+      body: SizedBox(
         height: Get.height,
         width: Get.width,
         child: Column(
@@ -93,7 +94,7 @@ class DashBoard extends StatelessWidget {
               title: "REPORT",
               subtitle: "Select your location to report incidences",
               onClick: () {
-                Get.to(()=>CountiesList());
+                Get.to(()=>const CountiesList());
               },
             ),
             CardImg(
@@ -102,7 +103,7 @@ class DashBoard extends StatelessWidget {
               subtitle:
                   "Participate in peace interventions through civic learning",
               onClick: () {
-                Get.to(()=>Resources());
+                Get.to(()=>const Resources());
 
               },
             )

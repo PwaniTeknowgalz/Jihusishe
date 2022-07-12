@@ -1,10 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:jihusishe/lib/backend/controllers/auth_controller.dart';
-import 'package:jihusishe/lib/backend/controllers/main_controller.dart';
-import 'package:jihusishe/lib/frontend/screens/dashboard.dart';
-import 'package:jihusishe/lib/frontend/screens/resources.dart';
-import 'package:jihusishe/lib/utils/app_constants.dart';
+import 'package:jihusishe/backend/controllers/auth_controller.dart';
+import 'package:jihusishe/frontend/screens/dashboard.dart';
+import 'package:jihusishe/frontend/screens/resources.dart';
+import 'package:jihusishe/utils/app_constants.dart';
+
+
 
 class AppDrawerWidget {
   getDrawer(page) {

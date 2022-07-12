@@ -6,11 +6,13 @@ import 'dart:ui';
 //import 'package:data4peace/utils/app_utils.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:jihusishe/lib/backend/controllers/auth_controller.dart';
-import 'package:jihusishe/lib/frontend/auth/login.dart';
-import 'package:jihusishe/lib/frontend/screens/dashboard.dart';
-import 'package:jihusishe/lib/frontend/widgets/curved_edges.dart';
-import 'package:jihusishe/lib/frontend/widgets/custom_button.dart';
+
+import '../../backend/controllers/auth_controller.dart';
+import '../../frontend/widgets/curved_edges.dart';
+import '../../frontend/widgets/custom_button.dart';
+import '../auth/login.dart';
+import 'dashboard.dart';
+
 //import 'package:jihusishe/lib/frontend/widgets/curved_button.dart';
 //import 'package:proste_bezier_curve/proste_bezier_curve.dart';
 
