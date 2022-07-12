@@ -2,13 +2,11 @@ import 'dart:io';
 
 import 'package:flutter_smart_dialog/flutter_smart_dialog.dart';
 import 'package:get/get.dart';
-import 'package:image_picker/image_picker.dart';
 import 'package:intl/date_symbol_data_local.dart';
 import 'package:intl/intl.dart';
-import 'package:jihusishe/lib/utils/app_utils.dart';
+import 'package:jihusishe/utils/app_utils.dart';
 import 'package:parse_server_sdk_flutter/parse_server_sdk.dart';
 import 'package:path/path.dart';
-import 'package:path_provider/path_provider.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 import 'auth_controller.dart';
