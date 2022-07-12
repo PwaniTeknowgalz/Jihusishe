@@ -16,8 +16,9 @@ class AuthController extends GetxController {
   Future<void> onInit() async {
     //run every time auth state changes
     // ever(firebaseUser, handleAuthChanged);
-    ever(parseUser, handleUserChanged);
+    
     await getParseUser();
+    ever(parseUser, handleUserChanged);
     super.onInit();
   }
 
