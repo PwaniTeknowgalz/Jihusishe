@@ -40,12 +40,12 @@ class _ResourcesState extends State<Resources> {
 
     return Scaffold(
       drawer: AppDrawerWidget().getDrawer("resources"),
-      floatingActionButton: Padding(
-        padding: const EdgeInsets.only(bottom:40.0),
-        child: FloatingActionButton(onPressed: (){
-          _showEditDialog(null);
-        },child: const Icon(Icons.add)),
-      ),
+      // floatingActionButton: Padding(
+      //   padding: const EdgeInsets.only(bottom:40.0),
+      //   child: FloatingActionButton(onPressed: (){
+      //     _showEditDialog(null);
+      //   },child: const Icon(Icons.add)),
+      // ),
         appBar: AppBar(
           backgroundColor: const Color.fromRGBO(22, 29, 64, 1),
           // leading: IconButton(
@@ -136,9 +136,9 @@ class _ResourcesState extends State<Resources> {
                                       fontSize: 15, fontWeight: FontWeight.w500),
                                 ),
                               ),
-                              IconButton(onPressed: (){
-                                _showEditDialog(resource);
-                              }, icon: const Icon(Icons.edit))
+                              // IconButton(onPressed: (){
+                              //   _showEditDialog(resource);
+                              // }, icon: const Icon(Icons.edit))
                             ],
                           ),
                         ),
