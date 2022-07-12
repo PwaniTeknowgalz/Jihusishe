@@ -38,8 +38,7 @@ class _ViewResourcesState extends State<ViewResources> {
           child: Stack(
             children: [
               Padding(
-                padding:const EdgeInsets.only(bottom: 80),
-
+                padding: const EdgeInsets.only(bottom: 80),
                 child: SingleChildScrollView(
                   child: Column(children: [
                     Container(
@@ -82,11 +81,19 @@ class _ViewResourcesState extends State<ViewResources> {
                       ),
                     ),
                     Container(
-                      padding: EdgeInsets.symmetric(horizontal: 20),
-                      alignment: AlignmentDirectional.centerStart,
-                        child: Text("Comments(${MainController.to.selectedResource.value?.get("comments")==null?0:MainController.to.selectedResource.value?.get("comments").length}): ",textAlign: TextAlign.start, style: TextStyle(fontSize: 12),)),
-                    SizedBox(height: 10,),
-    Obx(() { return _showComments();})
+                        padding: const EdgeInsets.symmetric(horizontal: 20),
+                        alignment: AlignmentDirectional.centerStart,
+                        child: Text(
+                          "Comments(${MainController.to.selectedResource.value?.get("comments") == null ? 0 : MainController.to.selectedResource.value?.get("comments").length}): ",
+                          textAlign: TextAlign.start,
+                          style: const TextStyle(fontSize: 12),
+                        )),
+                    const SizedBox(
+                      height: 10,
+                    ),
+                    Obx(() {
+                      return _showComments();
+                    })
                   ]),
                 ),
               ),
@@ -95,7 +102,8 @@ class _ViewResourcesState extends State<ViewResources> {
                 child: Container(
                   width: Get.width,
                   color: Colors.white,
-                  padding: const EdgeInsets.only(top: 5,bottom:5,right: 5,left:5),
+                  padding: const EdgeInsets.only(
+                      top: 5, bottom: 5, right: 5, left: 5),
                   child: Row(
                     mainAxisSize: MainAxisSize.max,
                     children: [
@@ -123,9 +131,11 @@ class _ViewResourcesState extends State<ViewResources> {
                           ),
                         ),
                       ),
-                      TextButton(onPressed: () async {
-                        await _saveComment(_formKey.currentState);
-                      }, child: Icon(Icons.send))
+                      TextButton(
+                          onPressed: () async {
+                            await _saveComment(_formKey.currentState);
+                          },
+                          child: const Icon(Icons.send))
                     ],
                   ),
                 ),
@@ -134,21 +144,21 @@ class _ViewResourcesState extends State<ViewResources> {
           ),
         ),
 
-         floatingActionButton:Padding(
-           padding: const EdgeInsets.only(bottom:50.0),
-           child: FloatingActionButton(
-             heroTag: "Share",
-             onPressed: () {
-               Share.share(
-                   "${MainController.to.selectedResource.value?.get("title")}  ${MainController.to.selectedResource.value?.get("link")}  -> Shared Via Jihusishe App");
-             },
-             backgroundColor: const Color.fromRGBO(22, 29, 64, 1),
-             child: const Icon(
-               Icons.share,
-               color: Colors.white,
-             ),
-           ),
-         ),
+        floatingActionButton: Padding(
+          padding: const EdgeInsets.only(bottom: 50.0),
+          child: FloatingActionButton(
+            heroTag: "Share",
+            onPressed: () {
+              Share.share(
+                  "${MainController.to.selectedResource.value?.get("title")}  ${MainController.to.selectedResource.value?.get("link")}  -> Shared Via Jihusishe App");
+            },
+            backgroundColor: const Color.fromRGBO(22, 29, 64, 1),
+            child: const Icon(
+              Icons.share,
+              color: Colors.white,
+            ),
+          ),
+        ),
         //     MainController.to.selectedResource.value?.get("link") != null &&
         //             MainController.to.selectedResource.value?.get("link") != ""
         //         ? Container(
@@ -190,51 +200,59 @@ class _ViewResourcesState extends State<ViewResources> {
     );
   }
 }
-_showComments(){
+
+_showComments() {
   var comments = MainController.to.selectedResource.value?.get("comments");
   print(comments);
-   if(comments == null){
-     return Container();
-   }
+  if (comments == null) {
+    return Container();
+  }
   comments = (comments as List).reversed.toList();
   return Column(
     children: comments.map<Widget>((e) {
       return Container(
-          width:Get.width,
+        width: Get.width,
         alignment: AlignmentDirectional.centerStart,
-        margin: const EdgeInsets.symmetric(vertical: 10,horizontal: 20),
-        padding: const EdgeInsets.symmetric(vertical: 15,horizontal: 20),
+        margin: const EdgeInsets.symmetric(vertical: 10, horizontal: 20),
+        padding: const EdgeInsets.symmetric(vertical: 15, horizontal: 20),
         decoration: BoxDecoration(
-          color: Colors.grey[200],
-          borderRadius: BorderRadius.circular(10)
-        ),
+            color: Colors.grey[200], borderRadius: BorderRadius.circular(10)),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            Text("${e["author"]["name"].trim()}", style: TextStyle(fontSize: 10,fontWeight: FontWeight.bold),),
-            SizedBox(height: 5,),
-            Text("${e["content"].trim()}", style: TextStyle()),
-            SizedBox(height:10,),
-            Text("${e["createdAt"].trim()}", style: TextStyle(fontSize: 8,)),
+            Text(
+              "${e["author"]["name"].trim()}",
+              style: const TextStyle(fontSize: 10, fontWeight: FontWeight.bold),
+            ),
+            const SizedBox(
+              height: 5,
+            ),
+            Text("${e["content"].trim()}", style: const TextStyle()),
+            const SizedBox(
+              height: 10,
+            ),
+            Text("${e["createdAt"].trim()}",
+                style: const TextStyle(
+                  fontSize: 8,
+                )),
           ],
         ),
       );
-    }).toList() ,
+    }).toList(),
   );
 }
+
 _saveComment(FormBuilderState? currentState) async {
   //AppUtils.showLoading();
   //print("TTTT");
-  if(currentState!=null){
+  if (currentState != null) {
     currentState.save();
     print(currentState.value);
   }
-  if(currentState==null || !currentState.isValid){
+  if (currentState == null || !currentState.isValid) {
     AppUtils.showError("Entered data is invalid or fields are empty!");
     return;
   }
-
-
 
   var comment = currentState.value["comment"];
 
