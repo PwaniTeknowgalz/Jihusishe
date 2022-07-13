@@ -10,6 +10,7 @@ class AppConst{
   static const Color secColorLight = Color.fromRGBO(247,230,176, 1);
   static const Color accentColor = Color.fromRGBO(51,65,72, 1);
   static const Color splashBg = Color.fromRGBO(28, 142, 153, 1);
+  static const Color customColor =  Color.fromRGBO(22, 29, 64, 1);
 
   //Snackbar Colors
   static const Color success = Color.fromRGBO(40, 167, 69, 1);

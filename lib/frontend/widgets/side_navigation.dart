@@ -14,7 +14,7 @@ class AppDrawerWidget {
       child: Column(
         children: [
           Container(
-            color: AppConst.accentColor,
+            color: AppConst.customColor,
             width: Get.width,
             padding: const EdgeInsets.only(top: 60,bottom: 20,left: 20,right:20),
             child: Column(
