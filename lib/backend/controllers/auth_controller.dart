@@ -44,6 +44,17 @@ class AuthController extends GetxController {
 
   //Login user Code
   login(username, password) async {
+
+    if(username==""){
+      AppUtils.showError("The username field must be filled!");
+      return false;
+    }
+
+    if(password==""){
+      AppUtils.showError("The password field must be filled!");
+      return false;
+    }
+
     try {
       var user = ParseUser(username, password, username);
       var res = await user.login();
