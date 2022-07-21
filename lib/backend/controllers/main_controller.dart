@@ -65,6 +65,7 @@ class MainController extends GetxController {
       query = QueryBuilder<ParseObject>(reqObj);
       //   ..whereEqualTo('user', AuthController.to.parseUser.value?.objectId);
       var data = await query.find();
+      resources.clear();
       if (data.isNotEmpty) {
         //print("Not Empty");
         var resCurrent = resources.value;
@@ -95,7 +96,7 @@ class MainController extends GetxController {
       ..set("title", title)
       ..set("content", content)
       ..set("link", link)
-      ..set("author", AuthController().parseUser.value)
+      ..set("author", AuthController.to.parseUser.value)
       ..set("image", parseFile);
 
     if (selectedResource.value != null) {
@@ -104,7 +105,7 @@ class MainController extends GetxController {
         ..set("title", title)
         ..set("content", content)
         ..set("link", link)
-        ..set("author", AuthController().parseUser.value);
+        ..set("author",  AuthController.to.parseUser.value);
 
       if (file != "") {
         resource.set("image", parseFile);

@@ -1,4 +1,4 @@
-package com.example.jihusishe
+package org.pwaniteknowgalz.mobipeace.jihusishe
 
 import io.flutter.embedding.android.FlutterActivity
 

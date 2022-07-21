@@ -210,7 +210,9 @@ class _ResourcesState extends State<Resources> {
                     mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                     children: [
                       InkWell(
-                        onTap: () {},
+                        onTap: () {
+                          MainController.to.openUrl("https://facebook.com/groups/1128692297856610/");
+                        },
                         child: const Image(
                           image: AssetImage("images/facebook.png"),
                           height: 36,
@@ -218,7 +220,10 @@ class _ResourcesState extends State<Resources> {
                         ),
                       ),
                       InkWell(
-                        onTap: () {},
+                        onTap: () {
+                          
+                          MainController.to.openUrl("https://twitter.com/Jihusishe_App?t=KnoQUoZ-WZc6GqqAtHh7Qw&s=08");
+                        },
                         child: const Image(
                           image:  AssetImage("images/twitter.png"),
                           height: 36,
@@ -226,7 +231,9 @@ class _ResourcesState extends State<Resources> {
                         ),
                       ),
                       InkWell(
-                        onTap: () {},
+                        onTap: () {
+                           MainController.to.openUrl("https://www.instagram.com/jihusishe/");
+                        },
                         child: const Image(
                           image: AssetImage("images/instagram.png"),
                           height: 36,
@@ -234,7 +241,9 @@ class _ResourcesState extends State<Resources> {
                         ),
                       ),
                       InkWell(
-                        onTap: () {},
+                        onTap: () {
+                          MainController.to.openUrl("https://www.instagram.com/jihusishe/");
+                        },
                         child: const Image(
                           image:  AssetImage("images/linkedin.png"),
                           height: 36,
